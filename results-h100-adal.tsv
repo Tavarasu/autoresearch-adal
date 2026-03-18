@@ -1,0 +1,192 @@
+commit	val_bpb	memory_gb	status	description
+c2450ad	0.995926	44.0	keep	baseline
+3a2dde5	1.002004	66.5	discard	increase depth from 8 to 10 (undertrained - fewer steps)
+bbc4c34	0.994962	44.0	keep	increase matrix LR from 0.04 to 0.06
+45cd3d2	0.994829	44.0	keep	increase embedding LR from 0.6 to 0.9
+753f376	1.021091	60.5	discard	increase depth from 8 to 9 (undertrained - fewer steps)
+7f2d1f9	0.991219	43.9	keep	reduce batch size from 2^19 to 2^18
+dd6fbc5	0.997575	22.2	discard	reduce batch size from 2^18 to 2^17 (too noisy)
+28c9ceb	0.989277	43.9	keep	increase warmdown ratio from 0.5 to 0.7
+eace09f	0.989091	43.9	keep	increase warmdown ratio from 0.7 to 0.85
+bd39af7	0.987974	43.9	keep	add warmup ratio 0.05
+16fede6	0.986213	43.9	keep	reduce weight decay from 0.2 to 0.1
+5106d2c	0.991908	43.9	discard	remove weight decay entirely (worse without regularization)
+fbec6ca	0.991749	44.4	discard	switch MLP from squared ReLU to SwiGLU (slower per step)
+98ac388	0.986615	43.9	discard	increase matrix LR from 0.06 to 0.08 (slightly worse)
+b048e7a	0.987035	43.9	discard	increase unembedding LR from 0.004 to 0.008
+f85dc89	0.987508	43.9	discard	change window pattern from SSSL to SSLL (slower per step)
+ed220de	0.987675	43.9	discard	set final LR fraction to 0.1
+972e75a	0.987390	43.9	discard	increase embedding LR from 0.9 to 1.2
+823fd06	0.990751	43.9	discard	increase softcap from 15 to 30
+7c2b01d	0.994924	44.0	discard	reduce HEAD_DIM from 128 to 64 (more heads but worse quality)
+42f775c	0.987363	43.9	discard	change Adam beta1 from 0.8 to 0.9
+8ce4d86	0.982000	53.9	keep	increase ASPECT_RATIO from 64 to 80 (wider model dim=640)
+14f8123	0.985351	63.9	discard	increase ASPECT_RATIO from 80 to 96 (undertrained - fewer steps)
+7c2eb11	0.983231	27.5	discard	reduce DEVICE_BATCH_SIZE from 128 to 64 (more grad accum overhead)
+d4549ee	0.983843	48.8	discard	reduce MLP expansion from 4x to 3x (too much capacity loss)
+cf2f7a3	0.990503	53.9	discard	reduce Muon ns_steps from 5 to 3 (worse orthogonalization)
+e2dfc15	0.983358	53.9	discard	increase scalar_lr from 0.5 to 1.0
+7f2bbe4	0.982030	53.9	discard	add gradient clipping max_norm=1.0 (no meaningful improvement)
+4858676	0.985431	63.9	discard	increase ASPECT_RATIO from 80 to 88 (rounded to dim=768 same as 96)
+8896893	0.982955	47.9	discard	reduce DEPTH from 8 to 7 (not enough capacity)
+15eedbd	0.984469	53.2	discard	reduce value embedding frequency to every 4th layer
+b033d69	0.982094	53.9	discard	increase warmdown ratio from 0.85 to 0.95 (no improvement)
+a354fad	3.215849	53.8	discard	weight tying wte/lm_head (broke training completely)
+473b2f8	0.982077	53.9	discard	increase Muon beta2 from 0.95 to 0.99
+503b63a	0.983269	53.9	discard	change window pattern to LLLL (all full context - slower)
+4198246	0.982240	53.9	discard	change window pattern to SSSS (slightly worse quality)
+c48fb5c	0.986319	53.9	discard	cosine warmdown schedule instead of linear
+738bd59	0.992957	46.7	discard	MQA with n_kv_head=1 (too aggressive KV reduction)
+f2b7f83	0.986918	53.9	discard	remove softcap entirely (less stable training)
+c52f34d	0.982192	53.9	discard	increase x0_lambdas init from 0.1 to 0.2
+5714a13	0.999476	48.8	discard	remove QK norm after RoPE (much worse)
+b179b30	0.984038	58.9	discard	increase MLP expansion from 4x to 5x (too many params)
+2891639	0.983919	53.9	discard	change Adam beta2 from 0.95 to 0.99
+bcab58f	0.983391	53.9	discard	reduce weight decay from 0.1 to 0.05
+00791a2	0.983119	53.9	discard	increase short window from 1/2 to 3/4 context
+4b4056d	0.983515	55.2	discard	value embeddings on every layer (too many params)
+9ecc4c4	0.987410	53.9	discard	reduce RoPE base frequency from 10000 to 1000
+81c91df	0.991871	40.8	discard	batch size 393216 with device_batch 96 (fewer steps)
+7f9fa8f	0.980498	53.9	keep	reduce short window from 1/2 to 1/4 context
+68ff627	0.980987	53.9	discard	reduce short window from 1/4 to 1/8 (too small)
+d9d2261	0.980782	53.9	discard	change window pattern from SSSL to SL (more long layers slower)
+04cf415	0.981290	53.9	discard	change window pattern to SSSSSSL (too few long layers)
+859c1a2	0.981844	53.9	discard	increase softcap from 15 to 20
+f90638d	0.981177	53.9	discard	reduce matrix LR from 0.06 to 0.05
+4e998c3	0.982619	53.9	discard	increase warmup ratio from 0.05 to 0.1
+9763e7d	0.981082	53.9	discard	increase matrix LR from 0.06 to 0.07
+56bd8bf	0.980483	53.9	keep	reduce embedding LR from 0.9 to 0.75
+4ed85ba	0.981144	53.9	discard	reduce embedding LR from 0.75 to 0.6
+f1b647d	0.980653	53.9	discard	increase weight decay from 0.1 to 0.15
+a5ddf5d	0.979653	53.9	keep	increase unembedding LR from 0.004 to 0.006
+353cbab	0.979335	53.9	keep	increase unembedding LR from 0.006 to 0.008
+99bcdd5	0.980491	53.9	discard	increase unembedding LR from 0.008 to 0.01
+6ee8ebb	0.979621	53.9	discard	increase warmdown ratio from 0.85 to 0.9
+684e6fa	0.980178	53.9	discard	constant weight decay (remove ramp-down)
+c1d1549	0.984617	53.9	discard	increase Muon momentum target from 0.95 to 0.98
+38e4834	0.980007	53.9	discard	reduce warmup ratio from 0.05 to 0.02
+9aad397	0.980205	53.9	discard	change window pattern from SSSL to SSL
+437889a	1.320543	61.9	discard	add label smoothing 0.1 (broke training)
+8a5a609	0.979452	53.9	discard	increase ve_gate_channels from 32 to 64
+b96d5e0	0.979732	53.9	discard	reduce VE gate scale from 2*sigmoid to 1*sigmoid
+ac01746	0.979804	53.9	discard	change short window from 1/4 to 1/3 context
+0c4b150	0.980692	53.9	discard	speed up Muon momentum ramp from 300 to 100 steps
+1cf29ba	0.997754	53.9	discard	switch MLP activation from squared ReLU to GELU (much worse)
+9fd75bd	0.981402	53.9	discard	increase lm_head init std from 0.001 to 0.01
+2b49978	0.979371	53.9	discard	reduce resid_lambdas init from 1.0 to 0.9 (no meaningful improvement)
+e3033e2	0.979692	53.9	discard	reduce embedding init std from 1.0 to 0.5
+300a4c4	0.980315	53.9	discard	set x0_lambdas init to 0.0
+c6226c6	0.979419	53.9	discard	remove dmodel LR scaling
+e1b77c2	0.991770	48.9	discard	parallel attention + MLP blocks (much worse)
+646f996	0.000000	0.0	crash	torch.compile max-autotune (segfault)
+400f498	0.979127	53.9	keep	slow Muon momentum ramp from 300 to 500 steps
+0c76cbc	0.980128	53.9	discard	slow Muon momentum ramp from 500 to 700 steps (too slow)
+769bb2f	0.979904	53.9	discard	increase Muon starting momentum from 0.85 to 0.90
+94dc798	0.979749	53.9	discard	increase RoPE base frequency from 10000 to 50000
+c50295e	0.980641	53.9	discard	add weight decay 0.01 to embedding params
+be82302	0.979470	53.9	discard	change Adam eps from 1e-10 to 1e-8
+58324fb	0.979676	53.9	discard	torch.compile with fullgraph=True
+978f556	0.979707	53.9	discard	change short window from 1/4 to 1/6 context
+eb28448	0.980765	53.9	discard	change random seed from 42 to 137
+473ca5d	0.979934	53.9	discard	double value embedding LR relative to word embedding LR
+c4ff046	0.979487	53.9	discard	increase resid_params LR multiplier from 0.01 to 0.02
+69a5244	0.000000	0.0	crash	torch.compile reduce-overhead (segfault)
+52eaed6	0.980043	53.9	discard	increase x0_lambdas init from 0.1 to 0.15
+22574f5	0.979582	53.9	discard	reduce softcap from 15 to 12
+f710687	0.979729	53.9	discard	increase unembedding LR from 0.008 to 0.009
+7fba5fd	0.980070	51.9	discard	reduce MLP hidden from 4x to 3.5x
+9b3be06	0.979247	53.9	discard	reduce warmdown ratio from 0.85 to 0.8
+67eac6c	0.979424	53.9	discard	weight decay proportional to LR multiplier
+d7d086b	0.981125	53.9	discard	reduce Muon ns_steps from 5 to 4
+1399d8b	0.979329	53.9	discard	increase Muon ns_steps from 5 to 6 (no meaningful improvement)
+884c0f7	0.982077	53.9	discard	use 1/sqrt(n_embd) for embedding init std (much worse)
+2d61210	0.982393	41.5	discard	ASPECT_RATIO=96 DEPTH=6 (wider but too shallow)
+cde1ba0	0.979840	53.9	discard	remove Muon LR aspect ratio scaling
+0f074f0	0.978984	53.9	keep	set FINAL_LR_FRAC to 0.05
+22919f3	0.980465	53.9	discard	increase FINAL_LR_FRAC from 0.05 to 0.1
+fcda9af	0.978806	53.9	keep	reduce FINAL_LR_FRAC from 0.05 to 0.02
+0b1b283	0.979048	53.9	discard	reduce FINAL_LR_FRAC from 0.02 to 0.01
+9e9b0eb	0.978508	53.9	keep	reduce matrix LR from 0.06 to 0.055
+1d11483	0.979434	53.9	discard	reduce matrix LR from 0.055 to 0.05 (too low)
+4035961	0.979349	53.9	discard	increase embedding LR from 0.75 to 0.8
+6d0bf04	0.979450	53.9	discard	reduce embedding LR from 0.75 to 0.65
+7589d45	0.978760	53.9	keep	reduce unembedding LR from 0.008 to 0.007
+a867b6f	0.978732	53.9	keep	reduce unembedding LR from 0.007 to 0.006
+642e81a	0.979121	53.9	discard	reduce unembedding LR from 0.006 to 0.005 (too low)
+66fd657	0.978698	53.9	keep	increase weight decay from 0.1 to 0.12
+611b0ea	0.978213	53.9	keep	increase weight decay from 0.12 to 0.14
+0525804	0.978836	53.9	discard	increase weight decay from 0.14 to 0.16 (too much)
+bad859a	0.979072	53.9	discard	reduce scalar LR from 0.5 to 0.3
+b41693e	0.978621	53.9	discard	reduce warmdown ratio from 0.85 to 0.82
+d069558	0.978486	53.9	discard	reduce warmup ratio from 0.05 to 0.03
+fecbc96	0.978611	53.9	discard	change Adam beta1 from 0.8 to 0.85
+c82f659	0.978789	53.9	discard	change Adam beta1 from 0.8 to 0.75
+638587a	0.979094	53.9	discard	increase VE gate scale from 2*sigmoid to 3*sigmoid
+a77e18e	0.978441	53.9	discard	set float32_matmul_precision to highest (slower)
+b70583c	0.978532	53.9	discard	increase warmdown ratio from 0.85 to 0.88
+46a354e	0.978395	53.9	discard	reduce VE gate channels from 32 to 16
+806961f	0.978778	53.9	discard	reduce matrix LR from 0.055 to 0.052
+bbb440b	0.978716	53.9	discard	Muon momentum start 0.80 with 400 step ramp
+326939c	0.980603	53.9	discard	change window pattern from SSSL to LSSS
+b89d789	0.979464	53.9	discard	change window pattern from SSSL to SLSS
+16940e5	0.978650	53.9	discard	increase matrix LR from 0.055 to 0.058
+93cce42	0.978280	53.9	discard	reduce embedding LR from 0.75 to 0.7
+5154d52	0.978112	53.9	keep	reduce weight decay from 0.14 to 0.13
+a1a193d	0.978328	53.9	discard	increase FINAL_LR_FRAC from 0.02 to 0.03
+5f1ad75	0.978368	53.9	discard	reduce FINAL_LR_FRAC from 0.02 to 0.015
+48b8849	0.979659	27.5	discard	reduce DEVICE_BATCH_SIZE from 128 to 64 (slower)
+bd98f98	0.980326	53.9	discard	init VE gate weights to -0.5 (worse)
+53f6fd1	0.978576	53.9	discard	reduce Muon beta2 from 0.95 to 0.9
+f3dc8ac	0.978366	53.9	discard	reduce RoPE precompute from 10x to 2x seq_len
+b1083f6	0.978934	53.9	discard	increase warmup ratio from 0.05 to 0.07
+6ed586b	0.978845	53.9	discard	change short window from 1/4 to 1/5 context
+c89e917	0.987557	53.9	discard	cubed ReLU activation (much worse)
+5ed9f8d	0.981519	53.9	discard	depth-aware init scaling (worse)
+1a15627	0.978805	53.9	discard	Muon momentum ramp 600 steps (from 500)
+6687ddf	0.978264	53.9	discard	reduce embedding LR from 0.75 to 0.72
+9a9c8f1	0.981525	53.9	discard	small non-zero init for c_proj weights (worse)
+8fcbfff	0.978905	53.9	discard	increase scalar_lr from 0.5 to 0.7
+d9138a2	0.978487	53.9	discard	adjust unembedding LR from 0.006 to 0.0065
+6935c07	0.978215	53.9	discard	reduce softcap from 15 to 13
+28aab5f	0.978303	53.9	discard	reduce softcap from 15 to 14
+5a772a7	0.978488	53.9	discard	increase softcap from 15 to 16
+aa6ad10	0.978019	53.9	keep	reduce Muon LR aspect scaling exponent from 0.5 to 0.25
+b5ad677	0.978695	53.9	discard	remove Muon LR aspect scaling entirely (too aggressive)
+62f0e02	0.977944	53.9	keep	Muon LR aspect scaling exponent 0.35
+603fbf5	0.977997	53.9	discard	Muon LR aspect scaling exponent 0.4
+7177cc6	0.977976	53.9	discard	Muon LR aspect scaling exponent 0.3
+85fbf4d	0.979093	53.9	discard	change x0_params betas to match main adam_betas
+da84cf2	0.978512	53.9	discard	sqrt weight decay schedule instead of linear
+c59162e	0.977403	53.9	keep	halve value embedding LR relative to word embedding LR
+9d5954c	0.977600	53.9	discard	reduce VE LR to 0.3x word embedding LR (too low)
+d521015	0.977226	53.9	keep	reduce VE LR to 0.4x word embedding LR
+e95db46	0.977449	53.9	discard	reduce VE LR to 0.35x (too low)
+4b32d36	0.977326	53.9	discard	VE LR to 0.45x (slightly worse than 0.4x)
+709d3d5	0.977463	53.9	discard	add weight decay 0.01 to lm_head params
+6e89685	0.975735	53.9	keep	add weight decay 0.01 to value embedding params
+248de1b	0.975947	53.9	discard	increase VE weight decay from 0.01 to 0.02
+3f8a390	0.975933	53.9	discard	reduce VE weight decay from 0.01 to 0.005
+08b2722	0.976881	53.9	discard	add weight decay 0.01 to word embedding params
+2dd4352	0.975569	53.9	keep	VE weight decay 0.015
+2807b2c	0.975675	53.9	discard	VE weight decay 0.018
+118d660	0.975820	53.9	discard	increase Muon weight decay from 0.13 to 0.15
+98de039	0.976050	53.9	discard	reduce VE LR to 0.3x with WD 0.015
+7df1c55	0.976036	53.9	discard	reduce VE gate channels from 32 to 8
+31b5d30	0.975779	53.9	discard	reduce Muon weight decay from 0.13 to 0.12
+ebeb69a	0.976301	53.9	discard	increase matrix LR from 0.055 to 0.06
+7330415	0.975705	53.9	discard	reduce VE embedding init scale by 0.5x
+5d96c34	0.975641	53.9	discard	increase Muon weight decay from 0.13 to 0.14
+c9b8e6c	0.975652	53.9	discard	Muon momentum ramp 450 steps
+803d38c	0.976248	53.9	discard	change short window to 3/8 context (384 tokens)
+09d4fc6	0.977032	53.9	discard	use tanh instead of sigmoid for VE gate
+07ddbec	0.975456	53.9	keep	increase warmdown ratio from 0.85 to 0.87
+c2e056c	0.975717	53.9	discard	increase warmdown ratio from 0.87 to 0.89
+3d58c35	0.975859	53.9	discard	reduce warmdown ratio from 0.87 to 0.86
+6111a86	0.975577	53.9	discard	FINAL_LR_FRAC from 0.02 to 0.025
+a857c7e	0.975737	53.9	discard	change Adam beta2 from 0.95 to 0.98
+ed507e2	0.976081	53.9	discard	increase matrix LR from 0.055 to 0.057
+0aee0b1	0.976409	53.9	discard	reduce RoPE base from 10000 to 5000
+59532e8	0.975511	53.9	discard	reduce warmup ratio from 0.05 to 0.04
+93ccd5b	0.975591	54.6	discard	VE on 3 out of 4 layers instead of alternating
+c328832	0.976368	53.9	discard	reduce VE gate scale from 2*sigmoid to 1.5*sigmoid
+784df2b	0.977002	53.9	discard	change random seed from 42 to 7
